@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{geometry} 
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{comment}
+\usepackage[pdftex]{graphicx}  
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{mathtools}
+\usepackage{units}
+\usepackage{booktabs}
+\usepackage{authblk}
+\renewcommand{\baselinestretch}{1.5}
+\geometry{a4paper} 
+\bibliographystyle{apalike}
+
+%----------------------------------------
+%AUTHORS
+%----------------------------------------
+\title{angsd-wrapper: a utility to aid in the analysis of next generation sequencing data}
+\author[1]{Arun Durvasula}
+\author[1,2]{Jeffrey Ross-Ibarra}
+
+\affil[1]{Department of Plant Sciences, University of California Davis}
+\affil[2]{Center for Population Biology and Genome Center, University of California Davis}
+
+\date{}
+
+%-----------------------------------------------------------------------------------------------------------------
+% BEGIN DOCUMENT
+%-----------------------------------------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\begin{abstract}
+blah
+
+\textbf{Availability:} github
+\end{abstract}
+
+\section{Introduction}
+The advent of highly multiplexed sequencing has brought about a large amount of new data more quickly than has been anticipated. This change allows biologists to use many more samples and brings with it the power to make more confident and better statistical inferences. However this also presents statistical challenges and new methods must be created with this amount of data in mind. In order to aid in the analysis of next generation sequencing data, population genetics software such as ANGSD has been developed. However, it requires much familiarity with command line tools and remains inaccessible to biologists that are not from a computational background. 
+
+Here we present a software package that wraps the functionality of ANGSD into an easy to use interface that only requires the use of a configuration file. Additionally, this package includes powerful interactive graphing software based on R and Shiny that allows the graphing of many statistics computed by ANGSD without the use of the command line.
+
+\section{Implementation}
+\subsection*{Pre-analysis}
+angsd-wrapper is implemented using several bash scripts that call ANGSD methods and handle saving intermediate files between the initial data preparation and the final data analysis. Each overall method in ANGSD, such as calculating estimates of $\theta$, follows a specific order of program calls. Thus, we have abstracted away the running of each step and provided a set of default values for parameters and instead require the user to supply the data using a configuration file. The user can override the default values of the parameters in the configuration file as well. 
+\subsection*{Post-analysis}
+angsd-wrapper contains a powerful graphing application based on R and Shiny. After the analysis is done by ANGSD,  the user can load the resulting statistics into a web-based application hosted on the user's computer. This application allows the interactive plotting of values such as estimators of $\theta$ and Tajima's D as well as the ability to load gene annotations from Ensembl. These features make it easy and intuitive to analyze next generation sequencing data.
+
+\end{document}
