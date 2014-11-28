@@ -45,9 +45,15 @@ blah
 The advent of highly multiplexed sequencing has brought about a large amount of new data more quickly than has been anticipated. 
 This change allows biologists to use many more samples and brings with it the power to make more confident and better statistical inferences.  %need to cite some examples of papers doing this. with lots of samples to low N. can cite miaze hapmap (4x) and rice HUang 2013 (2x) and probably a lot of other papers where they do large n and small depth. should cite some from both plants and animals.
 However this also presents statistical challenges and new methods must be created with this amount of data in mind. 
-In order to aid in the analysis of next generation sequencing data, population genetics software such as ANGSD has been developed. This program allows the user to calculate population genetic statistics such as site frequency spectrums, neutrality tests, and theta estimators from sequence data aligned to a reference. ANGSD uses likelihood based approaches to make full use of the data afforded by highly multiplexed sequencing. This has been used several studies to calculate summary statistics ( CITATIONS ). However, ANGSD requires much familiarity with command line tools and remains inaccessible to biologists that are not from a computational background. 
+In order to aid in the analysis of next generation sequencing data, population genetics software such as ANGSD has been developed. 
+This program allows the user to calculate population genetic statistics such as site frequency spectrums, neutrality tests, and theta estimators from sequence data aligned to a reference. 
+ANGSD uses likelihood based approaches to make full use of the data afforded by highly multiplexed sequencing. 
+This has been used several studies to calculate summary statistics ( CITATIONS ). 
+However, ANGSD requires much familiarity with command line tools and remains inaccessible to biologists that are not from a computational background. 
 
-Here we present a software package that aids in the preparation of analysis and facilitates analysis with interactive graphing software implemented in R and Shiny. Before analysis, angsd-wrapper turns a multistep analysis such as calculating Tajima's D into one step where the information needed is supplied using a configuration file. After ANGSD has finished the calculations, a browser based application can be used to interactively graph the results.
+Here we present a software package that aids in the preparation of analysis and facilitates analysis with interactive graphing software implemented in R and Shiny. 
+Before analysis, angsd-wrapper turns a multistep analysis such as calculating Tajima's D into one step where the information needed is supplied using a configuration file. 
+After ANGSD has finished the calculations, a browser based application can be used to interactively graph the results.
 
 \section*{Implementation}
 
